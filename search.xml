@@ -20,11 +20,11 @@
 <p>Gitee需要安装插件，比如这个</p>
 <p><img src="https://gitee.com/fmryuuko/pics/raw/master/img/20210322082003.png" alt="image-20210322082003624" style="zoom:50%;" /></p>
 <p>但是Gitee大于1MB的图片要登录才能查看，所以外链不出去。</p>
-<p>GitHub单个仓库容量大于1GB会有人工审查，发现是图床就没了，所以不要太嚣张，<del>用几百兆就换个仓库</del>。GitHub在国内访问速度慢，可以使用<a href="https://www.jsdelivr.com/">jsDelivr</a>加速。在PicGo的自定义域名中写上<code>https://cdn.jsdelivr.net/gh/fmryuuko/pics/用户名/仓库名</code>。</p>
+<p>GitHub建议单个仓库容量不要大于1GB，<del>用几百兆就换个仓库</del>，Blog本身图片并不多，大小也不会很大，所以是够用的。GitHub在国内访问速度慢，可以使用<a href="https://www.jsdelivr.com/">jsDelivr</a>加速。在PicGo的自定义域名中写上<code>https://cdn.jsdelivr.net/gh/fmryuuko/pics/用户名/仓库名</code>。</p>
 <h2 id="腾讯云COS"><a href="#腾讯云COS" class="headerlink" title="腾讯云COS"></a>腾讯云COS</h2><p>现在新用户免费50GB标准储存6个月，以前是永久。免费的是储存，流量等费用不免费。</p>
 <p>官方文档：<a href="https://cloud.tencent.com/edu/learning/course-1825-20823">利用腾讯云COS作为图床为Markdown文档提供图片链接</a></p>
 <h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>七牛云、又拍云要备案域名，一些公共图床不是很喜欢用。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>GitHub除了国内访问极慢没啥缺点。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>最后还是选择了GitHub，没有使用上文提到的jsDelivr加速，而是在PicGo里面设置了代理。</p>
 <h1 id="git设置代理"><a href="#git设置代理" class="headerlink" title="git设置代理"></a>git设置代理</h1><figure class="highlight tcl"><table><tr><td class="code"><pre><code class="hljs tcl">git config --<span class="hljs-keyword">global</span> <span class="hljs-keyword">http</span>.proxy <span class="hljs-keyword">http</span>://<span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>:<span class="hljs-number">7890</span><br>git config --<span class="hljs-keyword">global</span> https.proxy <span class="hljs-keyword">http</span>://<span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>:<span class="hljs-number">7890</span><br>取消代理<br>git config --<span class="hljs-keyword">global</span> --<span class="hljs-keyword">unset</span> <span class="hljs-keyword">http</span>.proxy<br>git config --<span class="hljs-keyword">global</span> --<span class="hljs-keyword">unset</span> https.proxy<br></code></pre></td></tr></table></figure>
 <h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><h2 id="图床测试："><a href="#图床测试：" class="headerlink" title="图床测试："></a>图床测试：</h2><p><img src="https://gitee.com/fmryuuko/pics/raw/master/img/banner.webp" alt="gitee图床测试"></p>
 <p><img src="https://raw.githubusercontent.com/fmryuuko/pics/main/img/20210321113355.png" alt="github图床测试 9MB图片"></p>
@@ -32,6 +32,9 @@
 <h2 id="测试结果"><a href="#测试结果" class="headerlink" title="测试结果"></a>测试结果</h2><p>显然，有些时候从github直接加载图片会出错</p>
 <p><img src="https://raw.githubusercontent.com/fmryuuko/pics/main/img/20210322125806" alt="这图也在GitHub 因为大于1MB"></p>
 ]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
       <tags>
         <tag>Hexo</tag>
         <tag>test</tag>
@@ -54,6 +57,9 @@
 <h2 id="换电脑"><a href="#换电脑" class="headerlink" title="换电脑"></a>换电脑</h2><p>一样安装<code>git</code>、<code>node.js</code>、<code>hexo</code>，在Blog文件夹下<code>git clone *</code>，然后和安装Hexo一样操作就行（不用<code>hexo init</code>了）。多端编辑每次<code>git pull</code>拉下来就行。</p>
 <figure class="highlight cmake"><table><tr><td class="code"><pre><code class="hljs cmake">npm <span class="hljs-keyword">install</span> hexo-cli -g<br>npm <span class="hljs-keyword">install</span><br>npm <span class="hljs-keyword">install</span> hexo-deployer-git<br></code></pre></td></tr></table></figure>
 ]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
       <tags>
         <tag>Hexo</tag>
       </tags>
