@@ -14,11 +14,11 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="Hexo上传到github的是生成的静态网页，不包含源文件，可以另开一个仓库用于储存Hexo的源文件。">
+  <meta name="description" content="在Hexo博客Fluid主题中增加基于GitHub Issue的Gitalk评论插件。">
   <meta name="author" content="ryuuko">
   <meta name="keywords" content="">
   
-  <title>git同步Hexo源文件 - ryuuko&#39;s blog</title>
+  <title>为Hexo添加评论 - ryuuko&#39;s blog</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -163,7 +163,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="git同步Hexo源文件">
+            <span class="h2" id="subtitle" title="为Hexo添加评论">
               
             </span>
 
@@ -173,8 +173,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2021-03-22 09:19" pubdate>
-        2021年3月22日 上午
+      <time datetime="2021-03-22 15:18" pubdate>
+        2021年3月22日 下午
       </time>
     </span>
   
@@ -185,7 +185,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      267 字
+      272 字
     </span>
   
 
@@ -216,7 +216,7 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">git同步Hexo源文件</h1>
+            <h1 style="display: none">为Hexo添加评论</h1>
             
               <p class="note note-info">
                 
@@ -225,19 +225,27 @@
               </p>
             
             <div class="markdown-body">
-              <p>Hexo上传到github的是生成的静态网页，不包含源文件，可以另开一个仓库用于储存Hexo的源文件。</p>
+              <p>在Hexo博客Fluid主题中增加基于GitHub Issue的Gitalk评论插件。</p>
 <a id="more"></a>
-<h1 id="使用Git-托管"><a href="#使用Git-托管" class="headerlink" title="使用Git*托管"></a>使用Git*托管</h1><h2 id="新建branch"><a href="#新建branch" class="headerlink" title="新建branch"></a>新建branch</h2><p>我放在Gitee的私有仓库，国内访问速度和延时好一些。</p>
-<p>新建仓库或者给Blog仓库创建分支都可以，我给原Blog仓库创建了一个名为<code>hexo</code>的分支，然后把它设为主分支。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/fmryuuko/pics/img/20210322092408.png" srcset="/img/loading.gif" lazyload alt="" style="zoom:50%;" /></p>
-<h2 id="clone到本地"><a href="#clone到本地" class="headerlink" title="clone到本地"></a>clone到本地</h2><p>在本地Blog文件夹下<code>git clone 仓库地址</code></p>
-<p>接下来把原来的博客源文件全部复制过来，注意到它原本就有<code>.gitignore</code>文件：</p>
-<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs x86asm"><span class="hljs-meta">.DS_Store</span><br>Thumbs<span class="hljs-number">.</span><span class="hljs-built_in">db</span><br><span class="hljs-built_in">db</span><span class="hljs-number">.</span>json<br>*.log<br>node_modules/<br><span class="hljs-meta">public</span>/<br><span class="hljs-meta">.deploy</span>*/<br></code></pre></td></tr></table></figure>
-<p>还有一点，如果曾经<code>git clone</code>过主题，记得把主题文件夹里的<code>.git</code>删除。</p>
-<h2 id="上传"><a href="#上传" class="headerlink" title="上传"></a>上传</h2><figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs avrasm">git <span class="hljs-keyword">add</span> .<br>git commit -m <span class="hljs-string">&quot;commit信息&quot;</span><br>git <span class="hljs-keyword">push</span><br></code></pre></td></tr></table></figure>
-<p>然后去仓库看看正不正常</p>
-<h2 id="换电脑"><a href="#换电脑" class="headerlink" title="换电脑"></a>换电脑</h2><p>一样安装<code>git</code>、<code>node.js</code>、<code>hexo</code>，在Blog文件夹下<code>git clone *</code>，然后和安装Hexo一样操作就行（不用<code>hexo init</code>了）。多端编辑每次<code>git pull</code>拉下来就行。</p>
-<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs cmake">npm <span class="hljs-keyword">install</span> hexo-cli -g<br>npm <span class="hljs-keyword">install</span><br>npm <span class="hljs-keyword">install</span> hexo-deployer-git<br></code></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-theme-fluid">Fluid</a>主题本身已经配置了Gitalk插件，只需要在<code>_config.fluid.yml</code>里面稍作修改即可。</p>
+<h1 id="在Fuild主题中配置Gitalk"><a href="#在Fuild主题中配置Gitalk" class="headerlink" title="在Fuild主题中配置Gitalk"></a>在Fuild主题中配置Gitalk</h1><ol>
+<li><p>找到<code>comments</code>设置为<code>enable</code>，并把<code>type</code>修改为<code>gitalk</code></p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-comment"># 评论插件</span><br><span class="hljs-comment"># Comment plugin</span><br><span class="hljs-attr">comments:</span><br>  <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span><br>  <span class="hljs-comment"># 指定的插件，需要同时设置对应插件的必要参数</span><br>  <span class="hljs-comment"># The specified plugin needs to set the necessary parameters at the same time</span><br>  <span class="hljs-comment"># Options: utterances | disqus | gitalk | valine | waline | changyan | livere | remark42 | twikoo</span><br>  <span class="hljs-attr">type:</span> <span class="hljs-string">gitalk</span><br></code></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol>
+<li><p>在github的<code>settings</code>左侧找到<code>Developer settings</code>，选择<code>OAuth Apps</code>，新建一个。<code>Homepage URL</code>和<code>Authorization callback URL</code>填博客地址，如<code>https://gmryuuko.github.io</code></p>
+<p><img src="https://raw.githubusercontent.com/gmryuuko/pics/main/img/20210322152756.png" srcset="/img/loading.gif" lazyload alt="" style="zoom:50%;" /></p>
+<p>记下<code>clientID</code>和<code>clientSecret</code>待会要填。</p>
+</li>
+<li><p>继续修改博客配置文件，找到<code>gitalk</code>项。填入<code>clientID</code>和<code>clientSecret</code>，<code>repo</code>填仓库名称，<code>owner</code>填仓库创建者，<code>admin</code>一样就行。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">gitalk:</span><br>  <span class="hljs-attr">clientID:</span> <span class="hljs-string">马赛克</span><br>  <span class="hljs-attr">clientSecret:</span> <span class="hljs-string">马赛克</span><br>  <span class="hljs-attr">repo:</span> <span class="hljs-string">gmryuuko.github.io</span><br>  <span class="hljs-attr">owner:</span> <span class="hljs-string">gmryuuko</span><br>  <span class="hljs-attr">admin:</span> [<span class="hljs-string">&#x27;gmryuuko&#x27;</span>]<br>  <span class="hljs-attr">language:</span> <span class="hljs-string">zh-CN</span><br>  <span class="hljs-attr">labels:</span> [<span class="hljs-string">&#x27;Gitalk&#x27;</span>]<br>  <span class="hljs-attr">perPage:</span> <span class="hljs-number">10</span><br>  <span class="hljs-attr">pagerDirection:</span> <span class="hljs-string">last</span><br>  <span class="hljs-attr">distractionFreeMode:</span> <span class="hljs-literal">false</span><br>  <span class="hljs-attr">createIssueManually:</span> <span class="hljs-literal">true</span><br>  <span class="hljs-attr">proxy:</span> <span class="hljs-string">https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token</span><br></code></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://github.com/gitalk/gitalk/issues/429">解决proxy问题的方法</a></p>
+</li>
+<li><p>接下来在页面底部可以看到使用GitHub账户登录，然后初始化Issue</p>
+<p><img src="https://raw.githubusercontent.com/gmryuuko/pics/main/img/20210322153556.png" srcset="/img/loading.gif" lazyload alt="image-20210322153556097"></p>
+</li>
+</ol>
 
             </div>
             <hr>
@@ -257,6 +265,8 @@
                     
                       <a class="hover-with-bg" href="/tags/Hexo/">Hexo</a>
                     
+                      <a class="hover-with-bg" href="/tags/Gitalk/">Gitalk</a>
+                    
                   </div>
                 
               </div>
@@ -272,18 +282,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2021/03/22/%E4%B8%BAHexo%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">为Hexo添加评论</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2020/11/06/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
-                        <span class="hidden-mobile">Hexo博客搭建</span>
+                      <a href="/2021/03/22/git%E5%90%8C%E6%AD%A5Hexo%E6%BA%90%E6%96%87%E4%BB%B6/">
+                        <span class="hidden-mobile">git同步Hexo源文件</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -311,7 +315,7 @@
           repo: 'gmryuuko.github.io',
           owner: 'gmryuuko',
           admin: ["gmryuuko"],
-          id: 'dff3d9fcb0b85354ed900dacecfaee66',
+          id: 'b3b7b6706e1f23adb4b9e1f276b83bcf',
           language: 'zh-CN',
           labels: ["Gitalk"],
           perPage: 10,
