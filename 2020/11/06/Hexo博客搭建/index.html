@@ -323,8 +323,8 @@
       Fluid.utils.createCssLink('/css/gitalk.css')
       Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/gitalk@1.7.0/dist/gitalk.min.js', function () {
         var gitalk = new Gitalk({
-          clientID: '075c18abbe8b6f832a3b',
-          clientSecret: 'c24bad97ad200e3d3f315a84de5181573be99096',
+          clientID: 'cb3ca20142906d41f441',
+          clientSecret: '866b710a96a9de9d4b2324f819f706e4db26f46e',
           repo: 'gmryuuko.github.io',
           owner: 'gmryuuko',
           admin: ["gmryuuko"],
@@ -335,7 +335,7 @@
           pagerDirection: 'last',
           createIssueManually: true,
           distractionFreeMode: false,
-          proxy: '&lt;your own proxy&gt;/https://github.com/login/oauth/access_token'
+          proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
         });
         gitalk.render('gitalk-container');
       });
