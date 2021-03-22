@@ -26,7 +26,9 @@
 <h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>七牛云、又拍云要备案域名，一些公共图床不是很喜欢用。</p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>最后还是选择了GitHub，没有使用上文提到的jsDelivr加速，而是在PicGo里面设置了代理。</p>
 <h1 id="git设置代理"><a href="#git设置代理" class="headerlink" title="git设置代理"></a>git设置代理</h1><figure class="highlight tcl"><table><tr><td class="code"><pre><code class="hljs tcl">git config --<span class="hljs-keyword">global</span> <span class="hljs-keyword">http</span>.proxy <span class="hljs-keyword">http</span>://<span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>:<span class="hljs-number">7890</span><br>git config --<span class="hljs-keyword">global</span> https.proxy <span class="hljs-keyword">http</span>://<span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>:<span class="hljs-number">7890</span><br>取消代理<br>git config --<span class="hljs-keyword">global</span> --<span class="hljs-keyword">unset</span> <span class="hljs-keyword">http</span>.proxy<br>git config --<span class="hljs-keyword">global</span> --<span class="hljs-keyword">unset</span> https.proxy<br></code></pre></td></tr></table></figure>
-<h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><h2 id="图床测试："><a href="#图床测试：" class="headerlink" title="图床测试："></a>图床测试：</h2><p><img src="https://gitee.com/fmryuuko/pics/raw/master/img/banner.webp" alt="gitee图床测试"></p>
+<h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><p class="note note-warning">warning test</p>
+
+<h2 id="图床测试："><a href="#图床测试：" class="headerlink" title="图床测试："></a>图床测试：</h2><p><img src="https://gitee.com/fmryuuko/pics/raw/master/img/banner.webp" alt="gitee图床测试"></p>
 <p><img src="https://raw.githubusercontent.com/fmryuuko/pics/main/img/20210321113355.png" alt="github图床测试 9MB图片"></p>
 <p><img src="https://cdn.jsdelivr.net/gh/fmryuuko/pics/img/20210322085424.jpg" alt="github jsdelivr加速测试 10MB图片"></p>
 <h2 id="测试结果"><a href="#测试结果" class="headerlink" title="测试结果"></a>测试结果</h2><p>显然，有些时候从github直接加载图片会出错</p>
