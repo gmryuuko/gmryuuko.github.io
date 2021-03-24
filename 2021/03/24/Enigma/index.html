@@ -1,0 +1,551 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/pageicon.webp">
+  <link rel="icon" href="/img/pageicon.webp">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="Nothing to say">
+  <meta name="author" content="ryuuko">
+  <meta name="keywords" content="">
+  
+  <title>Enigma - ryuuko&#39;s blog</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"gmryuuko.github.io","root":"/","version":"1.8.9","typing":{"enable":true,"typeSpeed":40,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":2},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 40vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>ryuuko</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://cdn.jsdelivr.net/gh/fmryuuko/pics/img/20210321113159.webp') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Enigma">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-03-24 22:15" pubdate>
+        2021年3月24日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.6k 字
+    </span>
+  
+
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">Enigma</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2021年3月24日 晚上
+                
+              </p>
+            
+            <div class="markdown-body">
+              <h1 id="Enigma"><a href="#Enigma" class="headerlink" title="Enigma"></a>Enigma</h1><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>todo</p>
+<h2 id="加密流程"><a href="#加密流程" class="headerlink" title="加密流程"></a>加密流程</h2><h3 id="传输密钥"><a href="#传输密钥" class="headerlink" title="传输密钥"></a>传输密钥</h3><ol>
+<li>首先发送方随机选择3个齿轮的外部状态（Message Key）$ABC$，<strong>以明文形式把$ABC$发送给对方</strong>。</li>
+<li>再选择密钥，即真正用来加密的齿轮初始状态$A’B’C’$，在当前齿轮的初始状态为$ABC$的情况下，连续按下$A’B’C’$得到密文$A’’B’’C’’$，<strong>把密文$A’’B’’C’’$发送给对方</strong>。</li>
+<li>对方在齿轮初始状态为$ABC$的情况下，输入$A’’B’’C’’$可以解密出真正的密钥$A’B’C’$。</li>
+<li>接下来双方把齿轮都设置为$A’B’C’$，就可以开始通讯了。</li>
+</ol>
+<h3 id="机器加密方式"><a href="#机器加密方式" class="headerlink" title="机器加密方式"></a>机器加密方式</h3><ol>
+<li><p>当按下某个键时，对该键进行加密的密钥是齿轮转了一次以后的状态。</p>
+<p>设3个齿轮从左到右分别为$Ⅲ,Ⅱ,Ⅰ$, 并且齿轮的状态从左到右为$AAZ$, 则输入字母$A$时，齿轮转到$AAA$的位置，此时$AAA$就是密钥。</p>
+</li>
+<li><p>$Ring Setting$：齿轮内部的初始状态，它们在齿轮转动时不会发生变化。而齿轮外部的状态$MessageKey$是会随每一次按键而发生变化的。</p>
+</li>
+<li><p>设Ⅰ号齿轮$RingSetting=B, MessageKey=D$, 则$\Delta=MessageKey-RingSetting=D-B=2$</p>
+<p>$\Delta$是差值，可以是负数，和下一步的加减无关。</p>
+</li>
+<li><p>假设输入字母$A$，则$A$进入$Ⅰ$号齿轮时，需要先<strong>加上</strong>$\Delta$即变成$C$, 查表：$C\rightarrow M$, 而从$Ⅰ$号齿轮出去时要<strong>减去</strong>$\Delta$，即$M-2=K$。（这里的「出去」指的是1号加密完出去，而不是经过reflector之后从enigma机器里面出去，刚开始理解错了）</p>
+</li>
+<li><p>接线板$PlugBoard$：可以额外交换几对字母，只在最开始和结束时起作用。</p>
+</li>
+</ol>
+<h3 id="齿轮的旋转"><a href="#齿轮的旋转" class="headerlink" title="齿轮的旋转"></a>齿轮的旋转</h3><p>5个齿轮分别位于$QEVJZ$时（例如1号齿轮在$Q$），下一次旋转会带动下一级齿轮旋转。</p>
+<h4 id="double-stepping"><a href="#double-stepping" class="headerlink" title="double stepping"></a>double stepping</h4><p>中间齿轮在即将旋转的位置时（例如2号在$E$），无论上一级齿轮在什么位置，下一步总是跟随它旋转。这是由$Enigma$的机械结构决定的，无论从5个齿轮中选择哪三个齿轮进行加密，总是会发生在中间齿轮上。</p>
+<p>例如选择3，2，1齿轮，3号当前在$A$，2号在$D$，1号在$Q$。此时旋转1号齿轮，变为$AER$，再一次旋转1号时，2号还会再转，变为$BFS$。</p>
+<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><p>当前三个齿轮的表</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs properties"><span class="hljs-attr">ABCDEFGHIJKLMNOPQRSTUVWXYZ</span><br><span class="hljs-attr">rotor</span> <span class="hljs-string">1:</span><br><span class="hljs-attr">EKMFLGDQVZNTOWYHXUSPAIBRCJ</span><br><span class="hljs-attr">rotor</span> <span class="hljs-string">2:</span><br><span class="hljs-attr">AJDKSIRUXBLHWTMCQGZNPYFVOE</span>  <span class="hljs-string"></span><br><span class="hljs-attr">rotor</span> <span class="hljs-string">3:</span><br><span class="hljs-attr">BDFHJLCPRTXVZNYEIWGAKMUSQO</span><br><span class="hljs-attr">reflector</span>:<span class="hljs-string"></span><br><span class="hljs-attr">YRUHQSLDPXNGOKMIEBFZCWVJAT</span><br></code></pre></td></tr></table></figure>
+<p>假设输入字母$A$，PlugBoard设置为$A-B,C-D$</p>
+<ol>
+<li>输入字母$A$，经过PlugBoard变成$B$</li>
+<li>齿轮$Ⅰ$中查表$B\rightarrow K$</li>
+<li>齿轮$Ⅱ$中查表$K\rightarrow L$</li>
+<li>齿轮$Ⅲ$中查表$L\rightarrow V$</li>
+<li>reflector查表$V\rightarrow W$</li>
+<li>齿轮$Ⅰ$中反查表$W\rightarrow R$</li>
+<li>齿轮$Ⅱ$中反查表$R\rightarrow G$</li>
+<li>齿轮$Ⅲ$中反查表$G\rightarrow F$</li>
+<li>Plug Board查表$F\rightarrow F$</li>
+</ol>
+<p>因为有反射器（reflector）的存在，输入$F$在上面的情况下就可以得到原文$A$。</p>
+<p>在这个例子中忽略了$MessageKey$和$RingSetting$，事实上，在齿轮中，正向查表之前要先加上$\Delta =MessageKey-RingSetting$，反向查表之前要先减去$\Delta$。</p>
+<h1 id="代码模拟实现"><a href="#代码模拟实现" class="headerlink" title="代码模拟实现"></a>代码模拟实现</h1><h2 id="变量定义"><a href="#变量定义" class="headerlink" title="变量定义"></a>变量定义</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">char</span> PlugBoard[] = <span class="hljs-string">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</span>;<br><span class="hljs-keyword">char</span> reflector[] = <span class="hljs-string">&quot;YRUHQSLDPXNGOKMIEBFZCWVJAT&quot;</span>;<br><span class="hljs-keyword">char</span> rotor_table[<span class="hljs-number">6</span>][<span class="hljs-number">27</span>] = &#123;<br>    <span class="hljs-string">&quot;&quot;</span>,<br>    <span class="hljs-string">&quot;EKMFLGDQVZNTOWYHXUSPAIBRCJ&quot;</span>, <span class="hljs-string">&quot;AJDKSIRUXBLHWTMCQGZNPYFVOE&quot;</span>,<br>    <span class="hljs-string">&quot;BDFHJLCPRTXVZNYEIWGAKMUSQO&quot;</span>, <span class="hljs-string">&quot;ESOVPZJAYQUIRHXLNFTGKDCMWB&quot;</span>,<br>    <span class="hljs-string">&quot;VZBRGITYUPSDNHLXAWMJQOFECK&quot;</span><br>&#125;;<br><span class="hljs-keyword">char</span> inv_rotor_table[<span class="hljs-number">6</span>][<span class="hljs-number">27</span>];<br><br><span class="hljs-keyword">char</span> step_char[] = <span class="hljs-string">&quot; RFWKA&quot;</span>; <span class="hljs-comment">// Royal Flags Wave Kings Above</span><br><span class="hljs-keyword">char</span> MessageKey[<span class="hljs-number">5</span>], RingSetting[<span class="hljs-number">5</span>];<br><span class="hljs-keyword">int</span> RotorNum[<span class="hljs-number">4</span>];<br></code></pre></td></tr></table></figure>
+<p>前面一部分是表，<code>inv_rotor_table</code>在程序开头计算得出。</p>
+<h2 id="齿轮转动"><a href="#齿轮转动" class="headerlink" title="齿轮转动"></a>齿轮转动</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">step1</span><span class="hljs-params">(<span class="hljs-keyword">int</span> rotorNum)</span></span><br><span class="hljs-function"></span>&#123;<br>    MessageKey[rotorNum] = (MessageKey[rotorNum] - <span class="hljs-string">&#x27;A&#x27;</span> + <span class="hljs-number">1</span>) % <span class="hljs-number">26</span> + <span class="hljs-string">&#x27;A&#x27;</span>;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">step</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    step1(<span class="hljs-number">3</span>);<br>    <span class="hljs-keyword">if</span> (MessageKey[<span class="hljs-number">3</span>] == step_char[RotorNum[<span class="hljs-number">3</span>]]<br>        || MessageKey[<span class="hljs-number">2</span>] + <span class="hljs-number">1</span> == step_char[RotorNum[<span class="hljs-number">2</span>]]) &#123;<br>        step1(<span class="hljs-number">2</span>);<br>        <span class="hljs-keyword">if</span> (MessageKey[<span class="hljs-number">2</span>] == step_char[RotorNum[<span class="hljs-number">2</span>]])<br>            step1(<span class="hljs-number">1</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><code>step1</code>模拟单个齿轮转动一次，<code>step</code>里考虑上级齿轮带动下级齿轮和<code>double step</code></p>
+<h2 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h2><p><code>encrypt</code>为一个字母的完整加密过程。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;algorithm&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string&gt;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><br><span class="hljs-keyword">char</span> PlugBoard[] = <span class="hljs-string">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</span>;<br><span class="hljs-keyword">char</span> reflector[] = <span class="hljs-string">&quot;YRUHQSLDPXNGOKMIEBFZCWVJAT&quot;</span>;<br><span class="hljs-keyword">char</span> rotor_table[<span class="hljs-number">6</span>][<span class="hljs-number">27</span>] = &#123;<br>    <span class="hljs-string">&quot;&quot;</span>,<br>    <span class="hljs-string">&quot;EKMFLGDQVZNTOWYHXUSPAIBRCJ&quot;</span>, <span class="hljs-string">&quot;AJDKSIRUXBLHWTMCQGZNPYFVOE&quot;</span>,<br>    <span class="hljs-string">&quot;BDFHJLCPRTXVZNYEIWGAKMUSQO&quot;</span>, <span class="hljs-string">&quot;ESOVPZJAYQUIRHXLNFTGKDCMWB&quot;</span>,<br>    <span class="hljs-string">&quot;VZBRGITYUPSDNHLXAWMJQOFECK&quot;</span><br>&#125;;<br><span class="hljs-keyword">char</span> inv_rotor_table[<span class="hljs-number">6</span>][<span class="hljs-number">27</span>];<br><br><span class="hljs-keyword">char</span> step_char[] = <span class="hljs-string">&quot; RFWKA&quot;</span>; <span class="hljs-comment">// Royal Flags Wave Kings Above</span><br><span class="hljs-keyword">char</span> MessageKey[<span class="hljs-number">5</span>], RingSetting[<span class="hljs-number">5</span>];<br><span class="hljs-keyword">int</span> RotorNum[<span class="hljs-number">4</span>];<br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">getInput</span><span class="hljs-params">()</span></span>;<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">progress</span><span class="hljs-params">()</span></span>;<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">step</span><span class="hljs-params">()</span></span>;<br><span class="hljs-function"><span class="hljs-keyword">char</span> <span class="hljs-title">encrypt</span><span class="hljs-params">(<span class="hljs-keyword">char</span> ch)</span></span>;<br><br><span class="hljs-comment">// #define DEBUG</span><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br><span class="hljs-meta">#<span class="hljs-meta-keyword">ifdef</span> DEBUG</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">else</span></span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">5</span>; i++)<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; <span class="hljs-number">26</span>; j++)<br>            inv_rotor_table[i][rotor_table[i][j] - <span class="hljs-string">&#x27;A&#x27;</span>] = j + <span class="hljs-string">&#x27;A&#x27;</span>;<br><br>    getInput();<br>    <span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;Input Plain Text:&quot;</span>);<br>    progress();<br><span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span></span><br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">step1</span><span class="hljs-params">(<span class="hljs-keyword">int</span> rotorNum)</span></span><br><span class="hljs-function"></span>&#123;<br>    MessageKey[rotorNum] = (MessageKey[rotorNum] - <span class="hljs-string">&#x27;A&#x27;</span> + <span class="hljs-number">1</span>) % <span class="hljs-number">26</span> + <span class="hljs-string">&#x27;A&#x27;</span>;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">step</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    step1(<span class="hljs-number">3</span>);<br>    <span class="hljs-keyword">if</span> (MessageKey[<span class="hljs-number">3</span>] == step_char[RotorNum[<span class="hljs-number">3</span>]]<br>        || MessageKey[<span class="hljs-number">2</span>] + <span class="hljs-number">1</span> == step_char[RotorNum[<span class="hljs-number">2</span>]]) &#123;<br>        step1(<span class="hljs-number">2</span>);<br>        <span class="hljs-keyword">if</span> (MessageKey[<span class="hljs-number">2</span>] == step_char[RotorNum[<span class="hljs-number">2</span>]])<br>            step1(<span class="hljs-number">1</span>);<br>    &#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">getInput</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">char</span> buf[<span class="hljs-number">1000</span>];<br><br>    <span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;Input Plug Board: abcd...&quot;</span>);<br>    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%s&quot;</span>, buf);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= min(<span class="hljs-keyword">int</span>(<span class="hljs-built_in">strlen</span>(buf) / <span class="hljs-number">2</span>), <span class="hljs-number">10</span>); i++) &#123;<br>        <span class="hljs-keyword">char</span> x, y;<br>        x = buf[<span class="hljs-number">2</span> * i - <span class="hljs-number">2</span>];<br>        y = buf[<span class="hljs-number">2</span> * i - <span class="hljs-number">1</span>];<br>        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">isupper</span>(x) &amp;&amp; <span class="hljs-built_in">isupper</span>(y))<br>            swap(PlugBoard[x - <span class="hljs-string">&#x27;A&#x27;</span>], PlugBoard[y - <span class="hljs-string">&#x27;A&#x27;</span>]);<br>    &#125;<br><br>    <span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;Input Rotor Number: a b c&quot;</span>);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">3</span>; i++)<br>        <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, &amp;RotorNum[i]);<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d %d %d\n&quot;</span>, RotorNum[<span class="hljs-number">1</span>], RotorNum[<span class="hljs-number">2</span>], RotorNum[<span class="hljs-number">3</span>]);<br><br>    <span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;Input Ring Setting: abc&quot;</span>);<br>    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%s&quot;</span>, buf);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">3</span>; i++)<br>        RingSetting[i] = buf[i - <span class="hljs-number">1</span>];<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%s\n&quot;</span>, RingSetting + <span class="hljs-number">1</span>);<br><br>    <span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;Input Message Key: abc&quot;</span>);<br>    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%s&quot;</span>, buf);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">3</span>; i++)<br>        MessageKey[i] = buf[i - <span class="hljs-number">1</span>];<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%s\n&quot;</span>, MessageKey + <span class="hljs-number">1</span>);<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">progress</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">char</span> text[<span class="hljs-number">1000</span>];<br>    <span class="hljs-keyword">while</span> (<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%s&quot;</span>, text) != EOF) &#123;<br>        <span class="hljs-comment">// printf(&quot;before: %s\n&quot;, text);</span><br>        <span class="hljs-comment">// printf(&quot;after : &quot;);</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>, l = <span class="hljs-built_in">strlen</span>(text); i &lt; l; i++) &#123;<br>            <span class="hljs-keyword">if</span> (<span class="hljs-built_in">isupper</span>(text[i])) &#123;<br>                step();<br>                text[i] = encrypt(text[i]);<br>            &#125;<br>            <span class="hljs-built_in">putchar</span>(text[i]);<br>        &#125;<br>        <span class="hljs-built_in">putchar</span>(<span class="hljs-string">&#x27;\n&#x27;</span>);<br>    &#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">char</span> <span class="hljs-title">encrypt</span><span class="hljs-params">(<span class="hljs-keyword">char</span> ch)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">int</span> delta3 = MessageKey[<span class="hljs-number">3</span>] - RingSetting[<span class="hljs-number">3</span>],<br>        delta2 = MessageKey[<span class="hljs-number">2</span>] - RingSetting[<span class="hljs-number">2</span>],<br>        delta1 = MessageKey[<span class="hljs-number">1</span>] - RingSetting[<span class="hljs-number">1</span>];<br>    <span class="hljs-comment">// printf(&quot;MK=%s\n&quot;, MessageKey + 1);</span><br>    <br>    <span class="hljs-comment">// plug board</span><br>    ch = PlugBoard[ch - <span class="hljs-string">&#x27;A&#x27;</span>];<br>    <br>    <span class="hljs-comment">// rotor 3</span><br>    ch = (ch - <span class="hljs-string">&#x27;A&#x27;</span> + delta3 + <span class="hljs-number">26</span>) % <span class="hljs-number">26</span> + <span class="hljs-string">&#x27;A&#x27;</span>;<br>    ch = rotor_table[RotorNum[<span class="hljs-number">3</span>]][ch - <span class="hljs-string">&#x27;A&#x27;</span>];<br>    ch = (ch - <span class="hljs-string">&#x27;A&#x27;</span> - delta3 + <span class="hljs-number">26</span>) % <span class="hljs-number">26</span> + <span class="hljs-string">&#x27;A&#x27;</span>;<br>    <br>    <span class="hljs-comment">// rotor 2</span><br>    ch = (ch - <span class="hljs-string">&#x27;A&#x27;</span> + delta2 + <span class="hljs-number">26</span>) % <span class="hljs-number">26</span> + <span class="hljs-string">&#x27;A&#x27;</span>;<br>    ch = rotor_table[RotorNum[<span class="hljs-number">2</span>]][ch - <span class="hljs-string">&#x27;A&#x27;</span>];<br>    ch = (ch - <span class="hljs-string">&#x27;A&#x27;</span> - delta2 + <span class="hljs-number">26</span>) % <span class="hljs-number">26</span> + <span class="hljs-string">&#x27;A&#x27;</span>;<br>    <br>    <span class="hljs-comment">// rotor 1</span><br>    ch = (ch - <span class="hljs-string">&#x27;A&#x27;</span> + delta1 + <span class="hljs-number">26</span>) % <span class="hljs-number">26</span> + <span class="hljs-string">&#x27;A&#x27;</span>;<br>    ch = rotor_table[RotorNum[<span class="hljs-number">1</span>]][ch - <span class="hljs-string">&#x27;A&#x27;</span>];<br>    ch = (ch - <span class="hljs-string">&#x27;A&#x27;</span> - delta1 + <span class="hljs-number">26</span>) % <span class="hljs-number">26</span> + <span class="hljs-string">&#x27;A&#x27;</span>;<br>    <br>    <span class="hljs-comment">// reflector</span><br>    ch = reflector[ch - <span class="hljs-string">&#x27;A&#x27;</span>];<br>    <br>    <span class="hljs-comment">// inv rotor 1</span><br>    ch = (ch - <span class="hljs-string">&#x27;A&#x27;</span> + delta1 + <span class="hljs-number">26</span>) % <span class="hljs-number">26</span> + <span class="hljs-string">&#x27;A&#x27;</span>;<br>    ch = inv_rotor_table[RotorNum[<span class="hljs-number">1</span>]][ch - <span class="hljs-string">&#x27;A&#x27;</span>];<br>    ch = (ch - <span class="hljs-string">&#x27;A&#x27;</span> - delta1 + <span class="hljs-number">26</span>) % <span class="hljs-number">26</span> + <span class="hljs-string">&#x27;A&#x27;</span>;<br>    <br>    <span class="hljs-comment">// inv rotor 2</span><br>    ch = (ch - <span class="hljs-string">&#x27;A&#x27;</span> + delta2 + <span class="hljs-number">26</span>) % <span class="hljs-number">26</span> + <span class="hljs-string">&#x27;A&#x27;</span>;<br>    ch = inv_rotor_table[RotorNum[<span class="hljs-number">2</span>]][ch - <span class="hljs-string">&#x27;A&#x27;</span>];<br>    ch = (ch - <span class="hljs-string">&#x27;A&#x27;</span> - delta2 + <span class="hljs-number">26</span>) % <span class="hljs-number">26</span> + <span class="hljs-string">&#x27;A&#x27;</span>;<br>    <br>    <span class="hljs-comment">// inv rotor 3</span><br>    ch = (ch - <span class="hljs-string">&#x27;A&#x27;</span> + delta3 + <span class="hljs-number">26</span>) % <span class="hljs-number">26</span> + <span class="hljs-string">&#x27;A&#x27;</span>;<br>    ch = inv_rotor_table[RotorNum[<span class="hljs-number">3</span>]][ch - <span class="hljs-string">&#x27;A&#x27;</span>];<br>    ch = (ch - <span class="hljs-string">&#x27;A&#x27;</span> - delta3 + <span class="hljs-number">26</span>) % <span class="hljs-number">26</span> + <span class="hljs-string">&#x27;A&#x27;</span>;<br>    <br>    <span class="hljs-comment">// plug board</span><br>    ch = PlugBoard[ch - <span class="hljs-string">&#x27;A&#x27;</span>];<br>    <br>    <span class="hljs-keyword">return</span> ch;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Enigma/">Enigma</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%AF%86%E7%A0%81%E5%AD%A6/">密码学</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.lazyComments('gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/gitalk@1.7.0/dist/gitalk.min.js', function () {
+        var gitalk = new Gitalk({
+          clientID: 'cb3ca20142906d41f441',
+          clientSecret: '866b710a96a9de9d4b2324f819f706e4db26f46e',
+          repo: 'gmryuuko.github.io',
+          owner: 'gmryuuko',
+          admin: ["gmryuuko"],
+          id: 'f3de11261851bd21423b9ff07d0ee995',
+          language: 'zh-CN',
+          labels: ["Gitalk"],
+          perPage: 10,
+          pagerDirection: 'last',
+          createIssueManually: true,
+          distractionFreeMode: false,
+          proxy: 'https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token'
+        });
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      $('#local-search-input').on('click', function() {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
+    })()
+  </script>
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-svg.js" ></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
