@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hexo博客搭建</title>
+    <url>/2020/11/06/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</url>
+    <content><![CDATA[<p>用github免费空间做博客，用github免费空间做图床，将白嫖进行到底:)</p>
+<a id="more"></a>
+<p><a href="https://www.pixiv.net/artworks/83246790">顶上大图来源</a>，<a href="https://www.pixiv.net/artworks/77045517">网站图标</a></p>
+<p>这个Blog同时部署在GitHub Pages和Gitee Pages</p>
+<p><a href="gmryuuko.github.io">gmryuuko.github.io</a> ，<a href="ryuuko.gitee.io">ryuuko.gitee.io</a></p>
+<h1 id="安装Hexo"><a href="#安装Hexo" class="headerlink" title="安装Hexo"></a>安装Hexo</h1><p><a href="https://hexo.io/zh-cn/docs/index.html">文档 | Hexo</a></p>
+<p><a href="https://gitee.com/help/articles/4136">Gitee Pages</a>，<a href="https://pages.github.com/">GitHub Pages</a></p>
+<p>相比于GitHub Pages，Gitee Pages免费版不能自动部署，这倒是挺麻烦的，不过在国内的访问速度要比github pages快的多，而且支持私有仓库部署Pages和多个仓库部署Pages。</p>
+<p>有时候安装了hexo，Windows系统提示禁止运行脚本，需要在管理员模式下执行：</p>
+<p><code>set-ExecutionPolicy RemoteSigned</code></p>
+<h1 id="添加搜索等"><a href="#添加搜索等" class="headerlink" title="添加搜索等"></a>添加搜索等</h1><p><a href="https://yashuning.github.io/2018/06/29/hexo-Next-%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD/">添加搜索</a> </p>
+<p><a href="https://github.com/fluid-dev/hexo-theme-fluid">Fluid</a>主题已经配置了搜索，<a href="https://hexo.fluid-dev.com/docs/guide/">Fluid配置指南</a></p>
+<p><a href="https://juejin.im/post/6844903830216261645">添加分类和标签</a></p>
+<h1 id="图床"><a href="#图床" class="headerlink" title="图床"></a>图床</h1><h2 id="PicGo设置"><a href="#PicGo设置" class="headerlink" title="PicGo设置"></a>PicGo设置</h2><p>用<a href="https://github.com/Molunerfinn/PicGo">PicGo</a>可以自动上传，挺方便的，<a href="https://picgo.github.io/PicGo-Doc/zh/guide/">PicGo文档</a>里也写了怎么白嫖GitHub当图床。</p>
+<p>Gitee需要安装插件，比如这个：</p>
+<p><img src="https://gitee.com/fmryuuko/pics/raw/master/img/20210322082003.png" alt="image-20210322082003624" style="zoom:50%;" /></p>
+<h3 id="PicGo插件卡在安装中"><a href="#PicGo插件卡在安装中" class="headerlink" title="PicGo插件卡在安装中"></a>PicGo插件卡在安装中</h3><p>在安装compress插件的时候遇到了，github的issue中有解决方案</p>
+<p><a href="https://github.com/JuZiSang/picgo-plugin-compress/issues/2">安装不上去。 · Issue #2 · JuZiSang/picgo-plugin-compress (github.com)</a></p>
+<p>给出的第一个方案：</p>
+<p><code>npm install picgo-plugin-compress --save --registry=https://registry.npm.taobao.org</code></p>
+<p>没用，报了一堆error。按后面的方案删除了<code>node_modules</code>和<code>package-lock.json</code>，然后</p>
+<p><code>npm install --registry=https://registry.npm.taobao.org</code></p>
+<p>重置了依赖就好了。</p>
+<p>总之大概是哪里没翻过墙导致依赖出了问题，用淘宝的镜像重置就好了。</p>
+<h3 id="compress插件奇怪的bug"><a href="#compress插件奇怪的bug" class="headerlink" title="compress插件奇怪的bug"></a>compress插件奇怪的bug</h3><p><code>luban</code>对于特别大的图片不能处理，不过这不算bug</p>
+<ol>
+<li><p>选择<code>imagemin_webp</code>进行压缩的时候，后缀从<code>.png</code>变成了<code>webp</code>…那个<code>.</code>没了…换成<code>imagemin</code>压<code>jpg</code>倒是没问题…搜了一下似乎没有人提，那就用<code>jpg</code>好了。</p>
+</li>
+<li><p><code>imagemin</code>压缩这张图片稳定崩溃，原因不明</p>
+<p><img src="https://cdn.jsdelivr.net/gh/gmryuuko/pics/img/20210323013750.png" alt=""></p>
+</li>
+</ol>
+<h2 id="白嫖Git-空间"><a href="#白嫖Git-空间" class="headerlink" title="白嫖Git*空间"></a>白嫖Git*空间</h2><p>Gitee大于1MB的图片要登录才能查看，所以外链不出去。</p>
+<p>GitHub建议单个仓库容量不要大于1GB，<del>用几百兆就换个仓库</del>，Blog本身图片并不多，大小也不会很大，所以是够用的。GitHub在国内访问速度慢，可以使用<a href="https://www.jsdelivr.com/">jsDelivr</a>加速。在PicGo的自定义域名中写上<code>https://cdn.jsdelivr.net/gh/用户名/仓库名</code>。</p>
+<h2 id="腾讯云COS"><a href="#腾讯云COS" class="headerlink" title="腾讯云COS"></a>腾讯云COS</h2><p>现在新用户免费50GB标准储存6个月，以前是永久。免费的是储存，流量等费用不免费。</p>
+<p>官方文档：<a href="https://cloud.tencent.com/edu/learning/course-1825-20823">利用腾讯云COS作为图床为Markdown文档提供图片链接</a></p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>七牛云、又拍云要备案域名，一些公共图床不是很喜欢用。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>最后还是选择了GitHub，使用上文提到的jsDelivr加速。</p>
+<h1 id="git设置代理"><a href="#git设置代理" class="headerlink" title="git设置代理"></a>git设置代理</h1><figure class="highlight tcl"><table><tr><td class="code"><pre><code class="hljs tcl">git config --<span class="hljs-keyword">global</span> <span class="hljs-keyword">http</span>.proxy <span class="hljs-keyword">http</span>://<span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>:<span class="hljs-number">7890</span><br>git config --<span class="hljs-keyword">global</span> https.proxy <span class="hljs-keyword">http</span>://<span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>:<span class="hljs-number">7890</span><br>取消代理<br>git config --<span class="hljs-keyword">global</span> --<span class="hljs-keyword">unset</span> <span class="hljs-keyword">http</span>.proxy<br>git config --<span class="hljs-keyword">global</span> --<span class="hljs-keyword">unset</span> https.proxy<br></code></pre></td></tr></table></figure>
+<h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1><p class="note note-warning">warning test</p>
+
+<h2 id="图床测试："><a href="#图床测试：" class="headerlink" title="图床测试："></a>图床测试：</h2><p><img src="https://gitee.com/fmryuuko/pics/raw/master/img/banner.webp" alt="gitee图床测试"></p>
+<p><img src="https://raw.githubusercontent.com/fmryuuko/pics/main/img/20210321113355.png" alt="github图床测试 9MB图片"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/fmryuuko/pics/img/20210322085424.jpg" alt="github jsdelivr加速测试 10MB图片"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/gmryuuko/pics/img/20210323012200.jpg" alt="compress插件 imagemin本地有损压缩后1.22MB"></p>
+<h2 id="测试结果"><a href="#测试结果" class="headerlink" title="测试结果"></a>测试结果</h2><p>显然，有些时候从github直接加载图片会出错</p>
+<p><img src="https://cdn.jsdelivr.net/gh/fmryuuko/pics/img/20210322125806" alt="这图也在GitHub 因为大于1MB"></p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>test</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Enigma</title>
+    <url>/2021/03/24/Enigma/</url>
+    <content><![CDATA[<h1 id="Enigma"><a href="#Enigma" class="headerlink" title="Enigma"></a>Enigma</h1><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>todo</p>
+<h2 id="加密流程"><a href="#加密流程" class="headerlink" title="加密流程"></a>加密流程</h2><h3 id="传输密钥"><a href="#传输密钥" class="headerlink" title="传输密钥"></a>传输密钥</h3><ol>
+<li>首先发送方随机选择3个齿轮的外部状态（Message Key）$ABC$，<strong>以明文形式把$ABC$发送给对方</strong>。</li>
+<li>再选择密钥，即真正用来加密的齿轮初始状态$A’B’C’$，在当前齿轮的初始状态为$ABC$的情况下，连续按下$A’B’C’$得到密文$A’’B’’C’’$，<strong>把密文$A’’B’’C’’$发送给对方</strong>。</li>
+<li>对方在齿轮初始状态为$ABC$的情况下，输入$A’’B’’C’’$可以解密出真正的密钥$A’B’C’$。</li>
+<li>接下来双方把齿轮都设置为$A’B’C’$，就可以开始通讯了。</li>
+</ol>
+<h3 id="机器加密方式"><a href="#机器加密方式" class="headerlink" title="机器加密方式"></a>机器加密方式</h3><ol>
+<li><p>当按下某个键时，对该键进行加密的密钥是齿轮转了一次以后的状态。</p>
+<p>设3个齿轮从左到右分别为$Ⅲ,Ⅱ,Ⅰ$, 并且齿轮的状态从左到右为$AAZ$, 则输入字母$A$时，齿轮转到$AAA$的位置，此时$AAA$就是密钥。</p>
+</li>
+<li><p>$Ring Setting$：齿轮内部的初始状态，它们在齿轮转动时不会发生变化。而齿轮外部的状态$MessageKey$是会随每一次按键而发生变化的。</p>
+</li>
+<li><p>设Ⅰ号齿轮$RingSetting=B, MessageKey=D$, 则$\Delta=MessageKey-RingSetting=D-B=2$</p>
+<p>$\Delta$是差值，可以是负数，和下一步的加减无关。</p>
+</li>
+<li><p>假设输入字母$A$，则$A$进入$Ⅰ$号齿轮时，需要先<strong>加上</strong>$\Delta$即变成$C$, 查表：$C\rightarrow M$, 而从$Ⅰ$号齿轮出去时要<strong>减去</strong>$\Delta$，即$M-2=K$。（这里的「出去」指的是1号加密完出去，而不是经过reflector之后从enigma机器里面出去，刚开始理解错了）</p>
+</li>
+<li><p>接线板$PlugBoard$：可以额外交换几对字母，只在最开始和结束时起作用。</p>
+</li>
+</ol>
+<h3 id="齿轮的旋转"><a href="#齿轮的旋转" class="headerlink" title="齿轮的旋转"></a>齿轮的旋转</h3><p>5个齿轮分别位于$QEVJZ$时（例如1号齿轮在$Q$），下一次旋转会带动下一级齿轮旋转。</p>
+<h4 id="double-stepping"><a href="#double-stepping" class="headerlink" title="double stepping"></a>double stepping</h4><p>中间齿轮在即将旋转的位置时（例如2号在$E$），无论上一级齿轮在什么位置，下一步总是跟随它旋转。这是由$Enigma$的机械结构决定的，无论从5个齿轮中选择哪三个齿轮进行加密，总是会发生在中间齿轮上。</p>
+<p>例如选择3，2，1齿轮，3号当前在$A$，2号在$D$，1号在$Q$。此时旋转1号齿轮，变为$AER$，再一次旋转1号时，2号还会再转，变为$BFS$。</p>
+<h3 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h3><p>当前三个齿轮的表</p>
+<figure class="highlight properties"><table><tr><td class="code"><pre><code class="hljs properties"><span class="hljs-attr">ABCDEFGHIJKLMNOPQRSTUVWXYZ</span><br><span class="hljs-attr">rotor</span> <span class="hljs-string">1:</span><br><span class="hljs-attr">EKMFLGDQVZNTOWYHXUSPAIBRCJ</span><br><span class="hljs-attr">rotor</span> <span class="hljs-string">2:</span><br><span class="hljs-attr">AJDKSIRUXBLHWTMCQGZNPYFVOE</span>  <span class="hljs-string"></span><br><span class="hljs-attr">rotor</span> <span class="hljs-string">3:</span><br><span class="hljs-attr">BDFHJLCPRTXVZNYEIWGAKMUSQO</span><br><span class="hljs-attr">reflector</span>:<span class="hljs-string"></span><br><span class="hljs-attr">YRUHQSLDPXNGOKMIEBFZCWVJAT</span><br></code></pre></td></tr></table></figure>
+<p>假设输入字母$A$，PlugBoard设置为$A-B,C-D$</p>
+<ol>
+<li>输入字母$A$，经过PlugBoard变成$B$</li>
+<li>齿轮$Ⅰ$中查表$B\rightarrow K$</li>
+<li>齿轮$Ⅱ$中查表$K\rightarrow L$</li>
+<li>齿轮$Ⅲ$中查表$L\rightarrow V$</li>
+<li>reflector查表$V\rightarrow W$</li>
+<li>齿轮$Ⅰ$中反查表$W\rightarrow R$</li>
+<li>齿轮$Ⅱ$中反查表$R\rightarrow G$</li>
+<li>齿轮$Ⅲ$中反查表$G\rightarrow F$</li>
+<li>Plug Board查表$F\rightarrow F$</li>
+</ol>
+<p>因为有反射器（reflector）的存在，输入$F$在上面的情况下就可以得到原文$A$。</p>
+<p>在这个例子中忽略了$MessageKey$和$RingSetting$，事实上，在齿轮中，正向查表之前要先加上$\Delta =MessageKey-RingSetting$，反向查表之前要先减去$\Delta$。</p>
+<h1 id="代码模拟实现"><a href="#代码模拟实现" class="headerlink" title="代码模拟实现"></a>代码模拟实现</h1><h2 id="变量定义"><a href="#变量定义" class="headerlink" title="变量定义"></a>变量定义</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">char</span> PlugBoard[] = <span class="hljs-string">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</span>;<br><span class="hljs-keyword">char</span> reflector[] = <span class="hljs-string">&quot;YRUHQSLDPXNGOKMIEBFZCWVJAT&quot;</span>;<br><span class="hljs-keyword">char</span> rotor_table[<span class="hljs-number">6</span>][<span class="hljs-number">27</span>] = &#123;<br>    <span class="hljs-string">&quot;&quot;</span>,<br>    <span class="hljs-string">&quot;EKMFLGDQVZNTOWYHXUSPAIBRCJ&quot;</span>, <span class="hljs-string">&quot;AJDKSIRUXBLHWTMCQGZNPYFVOE&quot;</span>,<br>    <span class="hljs-string">&quot;BDFHJLCPRTXVZNYEIWGAKMUSQO&quot;</span>, <span class="hljs-string">&quot;ESOVPZJAYQUIRHXLNFTGKDCMWB&quot;</span>,<br>    <span class="hljs-string">&quot;VZBRGITYUPSDNHLXAWMJQOFECK&quot;</span><br>&#125;;<br><span class="hljs-keyword">char</span> inv_rotor_table[<span class="hljs-number">6</span>][<span class="hljs-number">27</span>];<br><br><span class="hljs-keyword">char</span> step_char[] = <span class="hljs-string">&quot; RFWKA&quot;</span>; <span class="hljs-comment">// Royal Flags Wave Kings Above</span><br><span class="hljs-keyword">char</span> MessageKey[<span class="hljs-number">5</span>], RingSetting[<span class="hljs-number">5</span>];<br><span class="hljs-keyword">int</span> RotorNum[<span class="hljs-number">4</span>];<br></code></pre></td></tr></table></figure>
+<p>前面一部分是表，<code>inv_rotor_table</code>在程序开头计算得出。</p>
+<h2 id="齿轮转动"><a href="#齿轮转动" class="headerlink" title="齿轮转动"></a>齿轮转动</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">step1</span><span class="hljs-params">(<span class="hljs-keyword">int</span> rotorNum)</span></span><br><span class="hljs-function"></span>&#123;<br>    MessageKey[rotorNum] = (MessageKey[rotorNum] - <span class="hljs-string">&#x27;A&#x27;</span> + <span class="hljs-number">1</span>) % <span class="hljs-number">26</span> + <span class="hljs-string">&#x27;A&#x27;</span>;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">step</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    step1(<span class="hljs-number">3</span>);<br>    <span class="hljs-keyword">if</span> (MessageKey[<span class="hljs-number">3</span>] == step_char[RotorNum[<span class="hljs-number">3</span>]]<br>        || MessageKey[<span class="hljs-number">2</span>] + <span class="hljs-number">1</span> == step_char[RotorNum[<span class="hljs-number">2</span>]]) &#123;<br>        step1(<span class="hljs-number">2</span>);<br>        <span class="hljs-keyword">if</span> (MessageKey[<span class="hljs-number">2</span>] == step_char[RotorNum[<span class="hljs-number">2</span>]])<br>            step1(<span class="hljs-number">1</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<p><code>step1</code>模拟单个齿轮转动一次，<code>step</code>里考虑上级齿轮带动下级齿轮和<code>double step</code></p>
+<h2 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h2><p><code>encrypt</code>为一个字母的完整加密过程。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;algorithm&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;string&gt;</span></span><br><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;<br><br><span class="hljs-keyword">char</span> PlugBoard[] = <span class="hljs-string">&quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;</span>;<br><span class="hljs-keyword">char</span> reflector[] = <span class="hljs-string">&quot;YRUHQSLDPXNGOKMIEBFZCWVJAT&quot;</span>;<br><span class="hljs-keyword">char</span> rotor_table[<span class="hljs-number">6</span>][<span class="hljs-number">27</span>] = &#123;<br>    <span class="hljs-string">&quot;&quot;</span>,<br>    <span class="hljs-string">&quot;EKMFLGDQVZNTOWYHXUSPAIBRCJ&quot;</span>, <span class="hljs-string">&quot;AJDKSIRUXBLHWTMCQGZNPYFVOE&quot;</span>,<br>    <span class="hljs-string">&quot;BDFHJLCPRTXVZNYEIWGAKMUSQO&quot;</span>, <span class="hljs-string">&quot;ESOVPZJAYQUIRHXLNFTGKDCMWB&quot;</span>,<br>    <span class="hljs-string">&quot;VZBRGITYUPSDNHLXAWMJQOFECK&quot;</span><br>&#125;;<br><span class="hljs-keyword">char</span> inv_rotor_table[<span class="hljs-number">6</span>][<span class="hljs-number">27</span>];<br><br><span class="hljs-keyword">char</span> step_char[] = <span class="hljs-string">&quot; RFWKA&quot;</span>; <span class="hljs-comment">// Royal Flags Wave Kings Above</span><br><span class="hljs-keyword">char</span> MessageKey[<span class="hljs-number">5</span>], RingSetting[<span class="hljs-number">5</span>];<br><span class="hljs-keyword">int</span> RotorNum[<span class="hljs-number">4</span>];<br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">getInput</span><span class="hljs-params">()</span></span>;<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">progress</span><span class="hljs-params">()</span></span>;<br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">step</span><span class="hljs-params">()</span></span>;<br><span class="hljs-function"><span class="hljs-keyword">char</span> <span class="hljs-title">encrypt</span><span class="hljs-params">(<span class="hljs-keyword">char</span> ch)</span></span>;<br><br><span class="hljs-comment">// #define DEBUG</span><br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br><span class="hljs-meta">#<span class="hljs-meta-keyword">ifdef</span> DEBUG</span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">else</span></span><br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">5</span>; i++)<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; <span class="hljs-number">26</span>; j++)<br>            inv_rotor_table[i][rotor_table[i][j] - <span class="hljs-string">&#x27;A&#x27;</span>] = j + <span class="hljs-string">&#x27;A&#x27;</span>;<br><br>    getInput();<br>    <span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;Input Plain Text:&quot;</span>);<br>    progress();<br><span class="hljs-meta">#<span class="hljs-meta-keyword">endif</span></span><br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">step1</span><span class="hljs-params">(<span class="hljs-keyword">int</span> rotorNum)</span></span><br><span class="hljs-function"></span>&#123;<br>    MessageKey[rotorNum] = (MessageKey[rotorNum] - <span class="hljs-string">&#x27;A&#x27;</span> + <span class="hljs-number">1</span>) % <span class="hljs-number">26</span> + <span class="hljs-string">&#x27;A&#x27;</span>;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">step</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    step1(<span class="hljs-number">3</span>);<br>    <span class="hljs-keyword">if</span> (MessageKey[<span class="hljs-number">3</span>] == step_char[RotorNum[<span class="hljs-number">3</span>]]<br>        || MessageKey[<span class="hljs-number">2</span>] + <span class="hljs-number">1</span> == step_char[RotorNum[<span class="hljs-number">2</span>]]) &#123;<br>        step1(<span class="hljs-number">2</span>);<br>        <span class="hljs-keyword">if</span> (MessageKey[<span class="hljs-number">2</span>] == step_char[RotorNum[<span class="hljs-number">2</span>]])<br>            step1(<span class="hljs-number">1</span>);<br>    &#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">getInput</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">char</span> buf[<span class="hljs-number">1000</span>];<br><br>    <span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;Input Plug Board: abcd...&quot;</span>);<br>    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%s&quot;</span>, buf);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= min(<span class="hljs-keyword">int</span>(<span class="hljs-built_in">strlen</span>(buf) / <span class="hljs-number">2</span>), <span class="hljs-number">10</span>); i++) &#123;<br>        <span class="hljs-keyword">char</span> x, y;<br>        x = buf[<span class="hljs-number">2</span> * i - <span class="hljs-number">2</span>];<br>        y = buf[<span class="hljs-number">2</span> * i - <span class="hljs-number">1</span>];<br>        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">isupper</span>(x) &amp;&amp; <span class="hljs-built_in">isupper</span>(y))<br>            swap(PlugBoard[x - <span class="hljs-string">&#x27;A&#x27;</span>], PlugBoard[y - <span class="hljs-string">&#x27;A&#x27;</span>]);<br>    &#125;<br><br>    <span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;Input Rotor Number: a b c&quot;</span>);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">3</span>; i++)<br>        <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d&quot;</span>, &amp;RotorNum[i]);<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%d %d %d\n&quot;</span>, RotorNum[<span class="hljs-number">1</span>], RotorNum[<span class="hljs-number">2</span>], RotorNum[<span class="hljs-number">3</span>]);<br><br>    <span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;Input Ring Setting: abc&quot;</span>);<br>    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%s&quot;</span>, buf);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">3</span>; i++)<br>        RingSetting[i] = buf[i - <span class="hljs-number">1</span>];<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%s\n&quot;</span>, RingSetting + <span class="hljs-number">1</span>);<br><br>    <span class="hljs-built_in">puts</span>(<span class="hljs-string">&quot;Input Message Key: abc&quot;</span>);<br>    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%s&quot;</span>, buf);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= <span class="hljs-number">3</span>; i++)<br>        MessageKey[i] = buf[i - <span class="hljs-number">1</span>];<br>    <span class="hljs-built_in">printf</span>(<span class="hljs-string">&quot;%s\n&quot;</span>, MessageKey + <span class="hljs-number">1</span>);<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">progress</span><span class="hljs-params">()</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">char</span> text[<span class="hljs-number">1000</span>];<br>    <span class="hljs-keyword">while</span> (<span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%s&quot;</span>, text) != EOF) &#123;<br>        <span class="hljs-comment">// printf(&quot;before: %s\n&quot;, text);</span><br>        <span class="hljs-comment">// printf(&quot;after : &quot;);</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>, l = <span class="hljs-built_in">strlen</span>(text); i &lt; l; i++) &#123;<br>            <span class="hljs-keyword">if</span> (<span class="hljs-built_in">isupper</span>(text[i])) &#123;<br>                step();<br>                text[i] = encrypt(text[i]);<br>            &#125;<br>            <span class="hljs-built_in">putchar</span>(text[i]);<br>        &#125;<br>        <span class="hljs-built_in">putchar</span>(<span class="hljs-string">&#x27;\n&#x27;</span>);<br>    &#125;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">char</span> <span class="hljs-title">encrypt</span><span class="hljs-params">(<span class="hljs-keyword">char</span> ch)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">int</span> delta3 = MessageKey[<span class="hljs-number">3</span>] - RingSetting[<span class="hljs-number">3</span>],<br>        delta2 = MessageKey[<span class="hljs-number">2</span>] - RingSetting[<span class="hljs-number">2</span>],<br>        delta1 = MessageKey[<span class="hljs-number">1</span>] - RingSetting[<span class="hljs-number">1</span>];<br>    <span class="hljs-comment">// printf(&quot;MK=%s\n&quot;, MessageKey + 1);</span><br>    <br>    <span class="hljs-comment">// plug board</span><br>    ch = PlugBoard[ch - <span class="hljs-string">&#x27;A&#x27;</span>];<br>    <br>    <span class="hljs-comment">// rotor 3</span><br>    ch = (ch - <span class="hljs-string">&#x27;A&#x27;</span> + delta3 + <span class="hljs-number">26</span>) % <span class="hljs-number">26</span> + <span class="hljs-string">&#x27;A&#x27;</span>;<br>    ch = rotor_table[RotorNum[<span class="hljs-number">3</span>]][ch - <span class="hljs-string">&#x27;A&#x27;</span>];<br>    ch = (ch - <span class="hljs-string">&#x27;A&#x27;</span> - delta3 + <span class="hljs-number">26</span>) % <span class="hljs-number">26</span> + <span class="hljs-string">&#x27;A&#x27;</span>;<br>    <br>    <span class="hljs-comment">// rotor 2</span><br>    ch = (ch - <span class="hljs-string">&#x27;A&#x27;</span> + delta2 + <span class="hljs-number">26</span>) % <span class="hljs-number">26</span> + <span class="hljs-string">&#x27;A&#x27;</span>;<br>    ch = rotor_table[RotorNum[<span class="hljs-number">2</span>]][ch - <span class="hljs-string">&#x27;A&#x27;</span>];<br>    ch = (ch - <span class="hljs-string">&#x27;A&#x27;</span> - delta2 + <span class="hljs-number">26</span>) % <span class="hljs-number">26</span> + <span class="hljs-string">&#x27;A&#x27;</span>;<br>    <br>    <span class="hljs-comment">// rotor 1</span><br>    ch = (ch - <span class="hljs-string">&#x27;A&#x27;</span> + delta1 + <span class="hljs-number">26</span>) % <span class="hljs-number">26</span> + <span class="hljs-string">&#x27;A&#x27;</span>;<br>    ch = rotor_table[RotorNum[<span class="hljs-number">1</span>]][ch - <span class="hljs-string">&#x27;A&#x27;</span>];<br>    ch = (ch - <span class="hljs-string">&#x27;A&#x27;</span> - delta1 + <span class="hljs-number">26</span>) % <span class="hljs-number">26</span> + <span class="hljs-string">&#x27;A&#x27;</span>;<br>    <br>    <span class="hljs-comment">// reflector</span><br>    ch = reflector[ch - <span class="hljs-string">&#x27;A&#x27;</span>];<br>    <br>    <span class="hljs-comment">// inv rotor 1</span><br>    ch = (ch - <span class="hljs-string">&#x27;A&#x27;</span> + delta1 + <span class="hljs-number">26</span>) % <span class="hljs-number">26</span> + <span class="hljs-string">&#x27;A&#x27;</span>;<br>    ch = inv_rotor_table[RotorNum[<span class="hljs-number">1</span>]][ch - <span class="hljs-string">&#x27;A&#x27;</span>];<br>    ch = (ch - <span class="hljs-string">&#x27;A&#x27;</span> - delta1 + <span class="hljs-number">26</span>) % <span class="hljs-number">26</span> + <span class="hljs-string">&#x27;A&#x27;</span>;<br>    <br>    <span class="hljs-comment">// inv rotor 2</span><br>    ch = (ch - <span class="hljs-string">&#x27;A&#x27;</span> + delta2 + <span class="hljs-number">26</span>) % <span class="hljs-number">26</span> + <span class="hljs-string">&#x27;A&#x27;</span>;<br>    ch = inv_rotor_table[RotorNum[<span class="hljs-number">2</span>]][ch - <span class="hljs-string">&#x27;A&#x27;</span>];<br>    ch = (ch - <span class="hljs-string">&#x27;A&#x27;</span> - delta2 + <span class="hljs-number">26</span>) % <span class="hljs-number">26</span> + <span class="hljs-string">&#x27;A&#x27;</span>;<br>    <br>    <span class="hljs-comment">// inv rotor 3</span><br>    ch = (ch - <span class="hljs-string">&#x27;A&#x27;</span> + delta3 + <span class="hljs-number">26</span>) % <span class="hljs-number">26</span> + <span class="hljs-string">&#x27;A&#x27;</span>;<br>    ch = inv_rotor_table[RotorNum[<span class="hljs-number">3</span>]][ch - <span class="hljs-string">&#x27;A&#x27;</span>];<br>    ch = (ch - <span class="hljs-string">&#x27;A&#x27;</span> - delta3 + <span class="hljs-number">26</span>) % <span class="hljs-number">26</span> + <span class="hljs-string">&#x27;A&#x27;</span>;<br>    <br>    <span class="hljs-comment">// plug board</span><br>    ch = PlugBoard[ch - <span class="hljs-string">&#x27;A&#x27;</span>];<br>    <br>    <span class="hljs-keyword">return</span> ch;<br>&#125;<br></code></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>Enigma</tag>
+        <tag>密码学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>git同步Hexo源文件</title>
+    <url>/2021/03/22/git%E5%90%8C%E6%AD%A5Hexo%E6%BA%90%E6%96%87%E4%BB%B6/</url>
+    <content><![CDATA[<p>Hexo上传到github的是生成的静态网页，不包含源文件，可以另开一个仓库用于储存Hexo的源文件。</p>
+<a id="more"></a>
+<h1 id="使用Git-托管"><a href="#使用Git-托管" class="headerlink" title="使用Git*托管"></a>使用Git*托管</h1><h2 id="新建branch"><a href="#新建branch" class="headerlink" title="新建branch"></a>新建branch</h2><p>我放在Gitee的私有仓库，国内访问速度和延时好一些。</p>
+<p>新建仓库或者给Blog仓库创建分支都可以，我给原Blog仓库创建了一个名为<code>hexo</code>的分支，然后把它设为主分支。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/gmryuuko/pics/img/20210322152756.png" alt="" style="zoom:50%;" /></p>
+<h2 id="clone到本地"><a href="#clone到本地" class="headerlink" title="clone到本地"></a>clone到本地</h2><p>在本地Blog文件夹下<code>git clone 仓库地址</code></p>
+<p>接下来把原来的博客源文件全部复制过来，注意到它原本就有<code>.gitignore</code>文件：</p>
+<figure class="highlight x86asm"><table><tr><td class="code"><pre><code class="hljs x86asm"><span class="hljs-meta">.DS_Store</span><br>Thumbs<span class="hljs-number">.</span><span class="hljs-built_in">db</span><br><span class="hljs-built_in">db</span><span class="hljs-number">.</span>json<br>*.log<br>node_modules/<br><span class="hljs-meta">public</span>/<br><span class="hljs-meta">.deploy</span>*/<br></code></pre></td></tr></table></figure>
+<p>还有一点，如果曾经<code>git clone</code>过主题，记得把主题文件夹里的<code>.git</code>删除。</p>
+<h2 id="上传"><a href="#上传" class="headerlink" title="上传"></a>上传</h2><figure class="highlight avrasm"><table><tr><td class="code"><pre><code class="hljs avrasm">git <span class="hljs-keyword">add</span> .<br>git commit -m <span class="hljs-string">&quot;commit信息&quot;</span><br>git <span class="hljs-keyword">push</span><br></code></pre></td></tr></table></figure>
+<p>然后去仓库看看正不正常</p>
+<h2 id="换电脑"><a href="#换电脑" class="headerlink" title="换电脑"></a>换电脑</h2><p>一样安装<code>git</code>、<code>node.js</code>、<code>hexo</code>，在Blog文件夹下<code>git clone *</code>，然后和安装Hexo一样操作就行（不用<code>hexo init</code>了）。多端编辑每次<code>git pull</code>拉下来就行。</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><code class="hljs cmake">npm <span class="hljs-keyword">install</span> hexo-cli -g<br>npm <span class="hljs-keyword">install</span><br>npm <span class="hljs-keyword">install</span> hexo-deployer-git<br></code></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>为Hexo添加评论</title>
+    <url>/2021/03/22/%E4%B8%BAHexo%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA/</url>
+    <content><![CDATA[<p>在Hexo博客Fluid主题中增加基于GitHub Issue的Gitalk评论插件。</p>
+<a id="more"></a>
+<p><a href="https://github.com/fluid-dev/hexo-theme-fluid">Fluid</a>主题本身已经配置了Gitalk插件，只需要在<code>_config.fluid.yml</code>里面稍作修改即可。</p>
+<h1 id="在Fuild主题中配置Gitalk"><a href="#在Fuild主题中配置Gitalk" class="headerlink" title="在Fuild主题中配置Gitalk"></a>在Fuild主题中配置Gitalk</h1><ol>
+<li><p>找到<code>comments</code>设置为<code>enable</code>，并把<code>type</code>修改为<code>gitalk</code></p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><code class="hljs yaml"><span class="hljs-comment"># 评论插件</span><br><span class="hljs-comment"># Comment plugin</span><br><span class="hljs-attr">comments:</span><br>  <span class="hljs-attr">enable:</span> <span class="hljs-literal">true</span><br>  <span class="hljs-comment"># 指定的插件，需要同时设置对应插件的必要参数</span><br>  <span class="hljs-comment"># The specified plugin needs to set the necessary parameters at the same time</span><br>  <span class="hljs-comment"># Options: utterances | disqus | gitalk | valine | waline | changyan | livere | remark42 | twikoo</span><br>  <span class="hljs-attr">type:</span> <span class="hljs-string">gitalk</span><br></code></pre></td></tr></table></figure>
+</li>
+</ol>
+<ol>
+<li><p>在github的<code>settings</code>左侧找到<code>Developer settings</code>，选择<code>OAuth Apps</code>，新建一个。<code>Homepage URL</code>和<code>Authorization callback URL</code>填博客地址，如<code>https://gmryuuko.github.io</code></p>
+<p><img src="https://cdn.jsdelivr.net/gh/gmryuuko/pics/img/20210322152756.png" alt="" style="zoom:50%;" /></p>
+<p>记下<code>clientID</code>和<code>clientSecret</code>待会要填。</p>
+</li>
+<li><p>继续修改博客配置文件，找到<code>gitalk</code>项。填入<code>clientID</code>和<code>clientSecret</code>，<code>repo</code>填仓库名称，<code>owner</code>填仓库创建者，<code>admin</code>一样就行。</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><code class="hljs yaml"><span class="hljs-attr">gitalk:</span><br>  <span class="hljs-attr">clientID:</span> <span class="hljs-string">马赛克</span><br>  <span class="hljs-attr">clientSecret:</span> <span class="hljs-string">马赛克</span><br>  <span class="hljs-attr">repo:</span> <span class="hljs-string">gmryuuko.github.io</span><br>  <span class="hljs-attr">owner:</span> <span class="hljs-string">gmryuuko</span><br>  <span class="hljs-attr">admin:</span> [<span class="hljs-string">&#x27;gmryuuko&#x27;</span>]<br>  <span class="hljs-attr">language:</span> <span class="hljs-string">zh-CN</span><br>  <span class="hljs-attr">labels:</span> [<span class="hljs-string">&#x27;Gitalk&#x27;</span>]<br>  <span class="hljs-attr">perPage:</span> <span class="hljs-number">10</span><br>  <span class="hljs-attr">pagerDirection:</span> <span class="hljs-string">last</span><br>  <span class="hljs-attr">distractionFreeMode:</span> <span class="hljs-literal">false</span><br>  <span class="hljs-attr">createIssueManually:</span> <span class="hljs-literal">true</span><br>  <span class="hljs-attr">proxy:</span> <span class="hljs-string">https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token</span><br></code></pre></td></tr></table></figure>
+<p><a href="https://github.com/gitalk/gitalk/issues/429">解决proxy问题的方法</a></p>
+</li>
+<li><p>接下来在页面底部可以看到使用GitHub账户登录，然后初始化Issue</p>
+<p><img src="https://cdn.jsdelivr.net/gh/gmryuuko/pics/img/20210322153556.png" alt="image-20210322153556097"></p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>Gitalk</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hello World</title>
+    <url>/1970/01/01/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<a id="more"></a>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+      <categories>
+        <category>test</category>
+      </categories>
+      <tags>
+        <tag>test</tag>
+      </tags>
+  </entry>
+</search>
